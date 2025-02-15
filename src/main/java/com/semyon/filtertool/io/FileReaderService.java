@@ -19,7 +19,7 @@ public class FileReaderService {
                 } catch (IOException err) {
                     System.out.println("Opening file problem:" + err.getMessage());
                 }
-                // TO DO: other errs shoud be handled
+                // TO DO: other exceptions shoud be handled
             }
         boolean hasReadAnyLine = true;
 
@@ -42,7 +42,7 @@ public class FileReaderService {
             try {
                 bufferedReader.close();
             } catch (IOException err) {
-                System.err.println("Closing file error: " + err.getMessage());
+                System.err.println("Error (TO DO нормально все оформи): " + err.getMessage());
             }
         }
     }

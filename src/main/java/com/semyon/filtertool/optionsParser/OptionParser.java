@@ -26,6 +26,7 @@ public class OptionParser {
     public String[] getInputFilesNames() {
         return cmd.getArgs();
     }
+
     public String getOutputPath(){
         return cmd.getOptionValue("o", System.getProperty("user.dir"));
     }
