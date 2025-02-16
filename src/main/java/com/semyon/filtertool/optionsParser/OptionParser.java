@@ -4,7 +4,7 @@ import org.apache.commons.cli.*;
 public class OptionParser {
 
     private CommandLine cmd;
-
+    private boolean atLeastInputFiles = false;
     public  OptionParser(String[] args) throws ParseException{
 
         Options options = new Options();
@@ -21,35 +21,58 @@ public class OptionParser {
         CommandLineParser parser = new DefaultParser();
         try {
             cmd = parser.parse(options, args);
-        }catch (ParseException err){
-            System.err.println("Error: incorrect arguments" + err.getMessage());
-            //TO DO: avoid NPE
+            if (cmd.getArgs().length > 0) {
+                atLeastInputFiles = true;
+            }
+        }catch (ParseException err1){
+            System.err.println("Error: incorrect arguments passed. " + err1.getMessage());
+            // Form here -- we consider all the args as input files
+            try {
+                cmd = parser.parse(new Options(), args);
+                atLeastInputFiles = true;
+            } catch (ParseException err2) {
+                System.err.println("Error during fallback parsing: " + err2.getMessage());
+                cmd = new DefaultParser().parse(new Options(), new String[]{});
+            }
+//            //TO DO: avoid NPE
+//            cmd = new DefaultParser().parse(new Options(),
+//                    new String[]{});
         }
 
     }
 
     // Read names of input files; i.e. read all the data without flags with args
-    public String[] getInputFilesNames() {
-        return cmd.getArgs();
-    }
+        public String[] getInputFilesNames() {
+            if(cmd.getArgs().length > 0 ){
+                // System.out.println(cmd.getArgs().length + "cmd.getArgs().length");
+                return cmd.getArgs();
+            }
+            else {
+                System.err.println("Error: input files aren't specified.");
+                System.exit(1);
+            }
+            return cmd.getArgs();
+        }
 
     public String getOutputPath(){
         return cmd.getOptionValue("o", System.getProperty("user.dir"));
+        // TO DO -- handling invalid format
     }
 
-    public  String getOutputPrefix(){
+    public String getOutputPrefix(){
         return  cmd.getOptionValue("p", "");
+        // TO DO -- handling invalid format
     }
 
-    public  Boolean isAddingMode(){
+    public boolean isAddingMode(){
         return  cmd.hasOption("a");
     }
 
-    public  Boolean isShortStatistics(){
+    public boolean isShortStatistics(){
         return  cmd.hasOption("s");
     }
 
-    public  Boolean isFullStatistics(){
+    public boolean isFullStatistics(){
         return  cmd.hasOption("f");
     }
 }
