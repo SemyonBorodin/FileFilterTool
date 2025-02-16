@@ -12,12 +12,18 @@ public class FileReaderService {
         List<BufferedReader> bufferedReaders = new ArrayList<>();
         try {
             for (String inputFileName : inputFileNames) {
+                Path pathToCurrFile = Paths.get(inputFileName);
+                if (Files.exists(pathToCurrFile) == false){
+                    System.out.println("Error: there is no " + inputFileName
+                            + "in " + pathToCurrFile);
+                    continue;
+                }
                 try {
                     BufferedReader bufferedReader;
                     bufferedReader = Files.newBufferedReader(Path.of(inputFileName));
                     bufferedReaders.add(bufferedReader);
                 } catch (IOException err) {
-                    System.out.println("Opening file problem:" + err.getMessage());
+                    System.err.println("Opening file problem:" + err.getMessage());
                 }
                 // TO DO: other exceptions shoud be handled
             }
@@ -42,7 +48,7 @@ public class FileReaderService {
             try {
                 bufferedReader.close();
             } catch (IOException err) {
-                System.err.println("Error (TO DO нормально все оформи): " + err.getMessage());
+                System.err.println("Error : " + err.getMessage());
             }
         }
     }
