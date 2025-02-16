@@ -2,7 +2,7 @@ package com.semyon.filtertool.optionsParser;
 
 public class OptionValidator {
     // & ; | * ? ' " ` [ ] ( ) $ < > { } ^ # \ / % ! cannot be in file name in linux
-    private static final String bannedSymbols = "[&;\\\\|\\\\*\\\\?\\'\\\"`\\\\[\\\\]\\\\(\\\\)\\\\$<>\\\\{\\\\}\\\\^#\\\\\\\\/%!]";
+    private static final String bannedSymbols = "[&;\\\\|\\\\*\\\\?'\"\\\\`\\\\\\\\\\\\(\\\\)\\\\$<>\\\\{\\\\}\\\\^#\\\\\\\\/%!]";
 
     public static boolean isValidPathFormat(String path){
         // if path invalid or empty we use default path
