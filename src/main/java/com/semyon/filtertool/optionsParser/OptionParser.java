@@ -3,7 +3,7 @@ import org.apache.commons.cli.*;
 
 public class OptionParser {
 
-    private final CommandLine cmd;
+    private CommandLine cmd;
 
     public  OptionParser(String[] args) throws ParseException{
 
@@ -19,9 +19,15 @@ public class OptionParser {
                 " minimum and maximum values, sum and average.");
 
         CommandLineParser parser = new DefaultParser();
+        try {
+            cmd = parser.parse(options, args);
+        }catch (ParseException err){
+            System.err.println("Error: incorrect arguments" + err.getMessage());
+            //TO DO: avoid NPE
+        }
 
-        cmd = parser.parse(options, args);
     }
+
     // Read names of input files; i.e. read all the data without flags with args
     public String[] getInputFilesNames() {
         return cmd.getArgs();
