@@ -2,23 +2,22 @@ package com.semyon.filtertool.optionsParser;
 
 public class OptionValidator {
     // & ; | * ? ' " ` [ ] ( ) $ < > { } ^ # \ / % ! cannot be in file name in linux
-    private static final String bannedSymbols = "[&;\\\\|\\\\*\\\\?'\"\\\\`\\\\\\\\\\\\(\\\\)\\\\$<>\\\\{\\\\}\\\\^#\\\\\\\\/%!]";
+    private static final String bannedSymbols = "[&;~\\\\|\\\\*\\\\?'\"\\\\`\\\\\\\\\\\\(\\\\)\\\\$<>\\\\{\\\\}\\\\^#\\\\\\\\/%!]";
 
     public static boolean isValidPathFormat(String path){
         // if path invalid or empty we use default path
+
+        if (path == null || path.isEmpty() ) { return false;}
+
         String[] pathParts = path.split("/");
+
         for (String part: pathParts){
-            // ? case when starts with something/lala
-            // need to check  part.isEmpty()) => continue or smt like that?
-            // case .. ?
-            // if we have // in path .split will create "" in path
-            // so if we consider nonempty path I think pathParts cannot contain ""
             if (part.matches(".*" + bannedSymbols + ".*" ) == true){
+                System.err.println("Error: invalid path contains banned symbols here: " + part);
                 return false; // path is invalid because contains banned symbol
             }
-            else {return true;}
         }
-        return false;
+        return true; // ? /pth 1 pth 2 is different for attachment to user.dir
     }
 
     public static boolean isValidPrefixFormat(String prefix){
