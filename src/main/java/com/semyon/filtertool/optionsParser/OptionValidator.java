@@ -17,7 +17,7 @@ public class OptionValidator {
                 return false; // path is invalid because contains banned symbol
             }
         }
-        return true; // ? /pth 1 pth 2 is different for attachment to user.dir
+        return true;
     }
 
     public static boolean isValidPrefixFormat(String prefix){

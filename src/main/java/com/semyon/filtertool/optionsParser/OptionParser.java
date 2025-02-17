@@ -34,9 +34,8 @@ public class OptionParser {
                 System.err.println("Error during fallback parsing: " + err2.getMessage());
                 cmd = new DefaultParser().parse(new Options(), new String[]{});
             }
-//            //TO DO: avoid NPE
-//            cmd = new DefaultParser().parse(new Options(),
-//                    new String[]{});
+            cmd = new DefaultParser().parse(new Options(),
+                    new String[]{});
         }
 
     }
