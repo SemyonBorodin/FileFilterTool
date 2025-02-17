@@ -39,7 +39,7 @@ public class FileReaderService {
                         hasReadAnyLine = true;
                     }
                 } catch (IOException err) {
-                    System.err.println("Read line from file error:" + err.getMessage());
+                    System.err.println("Error: cannot read line from file:" + err.getMessage());
                 }
             }
         }
@@ -48,7 +48,7 @@ public class FileReaderService {
             try {
                 bufferedReader.close();
             } catch (IOException err) {
-                System.err.println("Error : " + err.getMessage());
+                System.err.println("Error: " + err.getMessage());
             }
         }
     }
