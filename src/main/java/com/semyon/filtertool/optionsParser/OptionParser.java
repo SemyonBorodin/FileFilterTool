@@ -1,6 +1,10 @@
 package com.semyon.filtertool.optionsParser;
 import org.apache.commons.cli.*;
 
+import java.io.IOException;
+
+import static com.semyon.filtertool.optionsParser.OptionValidator.isValidPathFormat;
+
 public class OptionParser {
 
     private CommandLine cmd;
@@ -54,8 +58,8 @@ public class OptionParser {
         }
 
     public String getOutputPath(){
+        // Value of the argument after -o, null otherwise
         return cmd.getOptionValue("o", System.getProperty("user.dir"));
-        // TO DO -- handling invalid format
     }
 
     public String getOutputPrefix(){
