@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 public class DirCreator {
     // creates dir if not exists and do nothing if already exists
-    public void createDir(String pathDir) throws IOException {
+    public static void createDir(String pathDir) throws IOException {
         if (pathDir == null || pathDir.isBlank()){
             System.out.println("Output dir is set default:" + System.getProperty("user.dir"));
             return;
@@ -20,7 +20,7 @@ public class DirCreator {
             }
         }
         else {
-            System.out.println("Output dir" + pathDir + " is already exists.");
+            System.out.println("Output dir " + pathDir + " is already exists.");
         }
     }
 }
