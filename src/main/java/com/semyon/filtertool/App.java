@@ -45,7 +45,7 @@ public class App
             System.out.println("in " + testOutputFileIntegers + "!");
         }
         else {
-            System.out.println(getFullStatistics(testList));
+            getFullStatistics(testList);
         }
     }
 
