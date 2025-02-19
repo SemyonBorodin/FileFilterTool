@@ -34,7 +34,7 @@ public class FileReaderService {
             for (BufferedReader bufferedReader : bufferedReaders) {
                 try {
                     String curLine = bufferedReader.readLine();
-                    if (curLine != null) {
+                    if (curLine != null && !curLine.isBlank()) {
                         linesFromFiles.add(curLine);
                         hasReadAnyLine = true;
                     }
