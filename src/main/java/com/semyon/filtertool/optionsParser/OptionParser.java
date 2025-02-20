@@ -21,6 +21,10 @@ public class OptionParser {
         options.addOption("f", false,"Full statistics: " +
                 "number of items written to the output files," +
                 " minimum and maximum values, sum and average.");
+        options.addOption("u", false,"Unique input files: " +
+                "-u remove duplicate input file names.\n" +
+                "If the same file is passed multiple times,\n" +
+                "it will not be processed an appropriate number of times.");
 
         CommandLineParser parser = new DefaultParser();
         try {
@@ -44,7 +48,7 @@ public class OptionParser {
 
     }
 
-    // Read names of input files; i.e. read all the data without flags with args
+        // Read names of input files; i.e. read all the data without flags with args
         public String[] getInputFilesNames() {
             if(cmd.getArgs().length > 0 ){
                 // System.out.println(cmd.getArgs().length + "cmd.getArgs().length");
@@ -78,4 +82,9 @@ public class OptionParser {
     public boolean isFullStatistics(){
         return  cmd.hasOption("f");
     }
+
+    public boolean isDuplicatesMode(){
+        return  cmd.hasOption("f");
+    }
+
 }
