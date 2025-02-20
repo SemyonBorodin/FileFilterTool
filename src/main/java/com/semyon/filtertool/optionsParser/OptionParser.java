@@ -1,10 +1,6 @@
 package com.semyon.filtertool.optionsParser;
 import org.apache.commons.cli.*;
 
-import java.io.IOException;
-
-import static com.semyon.filtertool.optionsParser.OptionValidator.isValidPathFormat;
-
 public class OptionParser {
 
     private CommandLine cmd;
