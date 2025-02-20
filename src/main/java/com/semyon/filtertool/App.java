@@ -47,7 +47,7 @@ public class App
         else {
             outputPath = createDir(outputPath).toString();
         }
-
+        System.out.println(outputPath + "outputPath");
         DataTypeSplitter splitter = new DataTypeSplitter();
         splitter.splitByType(data);
 
@@ -69,7 +69,7 @@ public class App
                 getShortStatistics(intsList);
                 System.out.println("in " + prefix + "integers.txt" + "!");
             }
-            else {
+            if(options.isFullStatistics()) {
                 getFullStatistics(intsList);
             }
         }
@@ -81,7 +81,7 @@ public class App
                 getShortStatistics(floatstList);
                 System.out.println("in " + prefix + "floats.txt" + "!");
             }
-            else {
+            if(options.isFullStatistics()) {
                 getFullStatistics(floatstList);
             }
         }
@@ -93,7 +93,7 @@ public class App
                 getShortStatistics(stringsList);
                 System.out.println("in " + prefix + "strings.txt" + "!");
             }
-            else {
+            if(options.isFullStatistics()) {
                 getFullStatistics(stringsList);
             }
         }

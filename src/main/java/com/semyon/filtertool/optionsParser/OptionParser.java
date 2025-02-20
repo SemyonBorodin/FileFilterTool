@@ -78,6 +78,6 @@ public class OptionParser {
     }
 
     public boolean isUniqMode(){
-        return  cmd.hasOption("f");
+        return  cmd.hasOption("u");
     }
 }
