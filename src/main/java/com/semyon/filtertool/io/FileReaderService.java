@@ -25,7 +25,6 @@ public class FileReaderService {
                 } catch (IOException err) {
                     System.err.println("Opening file problem:" + err.getMessage());
                 }
-                // TO DO: other exceptions shoud be handled
             }
         boolean hasReadAnyLine = true;
 
