@@ -47,7 +47,6 @@ public class App
         else {
             outputPath = createDir(outputPath).toString();
         }
-        System.out.println(outputPath + "outputPath");
         DataTypeSplitter splitter = new DataTypeSplitter();
         splitter.splitByType(data);
 
