@@ -1,5 +1,6 @@
 # File Filtering and Sorting Utility (Eng)
 This utility is designed to separate data from input files into three categories: integers, floating-point numbers, and strings.  
+The lines from the files are read in turn according to their enumeration on the command line.  
 The results are written to separate files with customizable output paths, filename prefixes, and append mode.  
 The utility also provides statistics on the read data.  
 ## Features
