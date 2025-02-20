@@ -6,6 +6,7 @@ import com.semyon.filtertool.dataSplitter.DataTypeSplitter;
 import org.apache.commons.cli.ParseException;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +51,7 @@ public class App
         DataTypeSplitter splitter = new DataTypeSplitter();
         splitter.splitByType(data);
 
-        List<Integer> intsList = splitter.getIntegers();
+        List<BigInteger> intsList = splitter.getIntegers();
         List<Float> floatstList = splitter.getFloats();
         List<String> stringsList = splitter.getStrings();
 
