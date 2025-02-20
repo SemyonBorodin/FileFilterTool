@@ -79,7 +79,7 @@ public class OptionParser {
         return  cmd.hasOption("f");
     }
 
-    public boolean isDuplicatesMode(){
+    public boolean isUniqMode(){
         return  cmd.hasOption("f");
     }
 
