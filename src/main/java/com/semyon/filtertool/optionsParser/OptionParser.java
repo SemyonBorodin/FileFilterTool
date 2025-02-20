@@ -47,7 +47,6 @@ public class OptionParser {
         // Read names of input files; i.e. read all the data without flags with args
         public String[] getInputFilesNames() {
             if(cmd.getArgs().length > 0 ){
-                // System.out.println(cmd.getArgs().length + "cmd.getArgs().length");
                 return cmd.getArgs();
             }
             else {
@@ -64,7 +63,6 @@ public class OptionParser {
 
     public String getOutputPrefix(){
         return  cmd.getOptionValue("p", "");
-        // TO DO -- handling invalid format
     }
 
     public boolean isAddingMode(){
@@ -82,5 +80,4 @@ public class OptionParser {
     public boolean isUniqMode(){
         return  cmd.hasOption("f");
     }
-
 }

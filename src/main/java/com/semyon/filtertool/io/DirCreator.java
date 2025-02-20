@@ -1,5 +1,4 @@
 package com.semyon.filtertool.io;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -62,8 +61,6 @@ public class DirCreator {
                         return path;
                     }
                 }
-
-                // TO DO: WINDOWS CASE
             }
         } catch (IOException err){
             System.err.println("Error: can't create directory " + pathDir +

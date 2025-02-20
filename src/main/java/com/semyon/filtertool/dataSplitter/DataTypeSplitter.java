@@ -1,5 +1,4 @@
 package com.semyon.filtertool.dataSplitter;
-
 import java.util.ArrayList;
 import java.util.List;
 

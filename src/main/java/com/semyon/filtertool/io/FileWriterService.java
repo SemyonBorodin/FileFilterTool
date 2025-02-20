@@ -6,17 +6,13 @@ import java.util.List;
 
 public class FileWriterService {
 
-    // private final static String DEFAULT_PATH = System.getProperty("user.dir") + "/";
-
     public static <T> void writeToFile(String path, List<T> data, boolean isAppendMode) {
 
         Path filePath = Path.of(path);
-        if(isAppendMode == false){
+        if(!isAppendMode){
             try {
                 if (Files.exists(filePath)) {
                     Files.delete(filePath);
-//                    System.out.println("File " + filePath + " was deleted for overwrite\n" +
-//                            " -a option is set false.");
                 }
                 Files.createFile(filePath);
                 // System.out.println("File recreated: " + filePath);

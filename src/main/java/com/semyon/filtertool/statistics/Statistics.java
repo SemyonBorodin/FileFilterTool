@@ -5,7 +5,7 @@ import java.util.List;
 public class Statistics {
 
     public static <T> void getShortStatistics(List<T> data) {
-        // Num elements written in file
+
         System.out.print(data.size() + " elements successfully written ");
     }
 

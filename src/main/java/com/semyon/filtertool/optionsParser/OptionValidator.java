@@ -6,13 +6,12 @@ public class OptionValidator {
 
     public static boolean isValidPathFormat(String path){
         // if path invalid or empty we use default path
-
         if (path == null || path.isEmpty() ) { return false;}
 
         String[] pathParts = path.split("/");
 
         for (String part: pathParts){
-            if (part.matches(".*" + bannedSymbols + ".*" ) == true){
+            if (part.matches(".*" + bannedSymbols + ".*" )){
                 System.err.println("Error: invalid path contains banned symbols here: " + part);
                 return false; // path is invalid because contains banned symbol
             }
@@ -27,12 +26,7 @@ public class OptionValidator {
         if (prefix.isBlank()){
             return true;
         }
-        if (prefix.matches(".*" + bannedSymbols + ".*" ) == false){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return !prefix.matches(".*" + bannedSymbols + ".*");
     }
 
 }

@@ -21,11 +21,10 @@ public class App
 {
     public static void main(String[] args) throws ParseException, IOException {
 
-        Path DEFAULT_OUTPUT_PATH = createDir("");
         OptionParser options = new OptionParser(args);
         String[] inputFilesNames = options.getInputFilesNames();
         String prefix = "";
-        // if user passed in1.txt in1.txt (-u is false)
+
         List<String> uniqueInputFilesNames = new ArrayList<>();
         for (String item : inputFilesNames) {
             if (!uniqueInputFilesNames.contains(item)) {
@@ -38,7 +37,7 @@ public class App
         }
         String outputPath = options.getOutputPath();
         List<String> data = readFile(inputFilesNames);
-        if(data.size() == 0){
+        if(data.isEmpty()){
             System.out.println("Nothing to do: data is empty");
             return;
         }
@@ -53,11 +52,8 @@ public class App
         splitter.splitByType(data);
 
         List<Integer> intsList = splitter.getIntegers();
-        System.out.println(intsList + "intsList");
         List<Float> floatstList = splitter.getFloats();
-        System.out.println(floatstList + "floatstList");
         List<String> stringsList = splitter.getStrings();
-        System.out.println(stringsList + "stringsList");
 
         if(isValidPrefixFormat(options.getOutputPrefix())){
             prefix = options.getOutputPrefix();
@@ -65,12 +61,10 @@ public class App
         else {
             prefix = "";
         }
-        // System.out.println(prefix + "prefix");
         if(!intsList.isEmpty()){
             String intsOutputPath = Path.of(outputPath).resolve(prefix+"integers.txt").toString();
             FileWriterService.writeToFile(intsOutputPath, intsList, options.isAddingMode());
 
-            //statistics
             if(options.isShortStatistics()){
                 getShortStatistics(intsList);
                 System.out.println("in " + prefix + "integers.txt" + "!");
@@ -83,7 +77,6 @@ public class App
             String floatsOutputPath = Path.of(outputPath).resolve(prefix+"floats.txt").toString();
             FileWriterService.writeToFile(floatsOutputPath, floatstList, options.isAddingMode());
 
-            //statistics
             if(options.isShortStatistics()){
                 getShortStatistics(floatstList);
                 System.out.println("in " + prefix + "floats.txt" + "!");
