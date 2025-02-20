@@ -67,3 +67,52 @@ After installing Java and Maven go to project dir and run
 4. System: Linux or WSL
 
 ### Exaple of work
+
+Example of input files  
+- in1.txt  
+```
+1
+3
+5
+Lorem ipsum dolor sit amet
+45
+Пример
+3.1415
+consectetur adipiscing
+-0.001
+тестовое задание
+100500
+ ```
+
+- in2.txt
+```
+2
+4
+Нормальная форма числа с плавающей запятой
+1.528535047E-25
+Long
+1234567890123456789
+```
+- `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-s -u -p important- in1.txt in1.txt in2.txt"C`  
+  short statistics, uniq mode, default output dir, prefix **important-**.
+- important-integers.txt  
+  ```
+  1
+  3
+  5
+  45
+  100500
+  ```
+- important-floats.txt  
+  ```
+  3.1415
+  -0.001
+  ```
+- important-strings.txt  
+  ```
+  Lorem ipsum dolor sit amet
+  Пример
+  consectetur adipiscing
+  тестовое задание
+  ```
+  
