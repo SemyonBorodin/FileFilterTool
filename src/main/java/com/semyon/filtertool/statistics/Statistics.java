@@ -10,10 +10,6 @@ public class Statistics {
     }
 
     public static <T> void getFullStatistics(List<T> data) {
-        //Полная статистика для чисел
-        //дополнительно содержит минимальное и максимальное значения, сумма и среднее.
-        //Полная статистика для строк, помимо их количества, содержит также размер самой
-        //короткой строки и самой длинной.
 
         T firstElem = data.get(0);
         String type = (firstElem instanceof Integer) ? "integers" : "floats";
@@ -37,6 +33,18 @@ public class Statistics {
                     + "Average value equals: " + average + "\n");
 
         }
-        System.out.println("Заглушка -- тест полной статистики");
+        else if(firstElem instanceof String) {
+            int minLength = Integer.MAX_VALUE;
+            int maxLength = Integer.MIN_VALUE;
+            for (T item : data) {
+                int length = ((String) item).length();
+                minLength = Math.min(minLength, length);
+                maxLength = Math.max(maxLength, length);
+            }
+            System.out.println("Full statistics for " + type + ":\n"
+                    + "Elements successfully written: " + data.size() + "\n"
+                    + "Shortest string has length: " + minLength + ";\n"
+                    + "Longest string has length: " + maxLength + ";\n");
+        }
     }
 }
