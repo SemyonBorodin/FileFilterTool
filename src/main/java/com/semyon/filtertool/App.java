@@ -8,6 +8,8 @@ import org.apache.commons.cli.ParseException;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,12 +34,16 @@ public class App
         System.out.println("Integers size (0 => needn't create or adding to file): "
                 + splitter.getIntegers() + isValidPathFormat(options.getOutputPath()) + options.getOutputPath());
         try {
-            createDir(options.getOutputPath());
-            System.out.println("Created " + options.getOutputPath());
+            Path papap = createDir(options.getOutputPath());
+            //System.out.println("Created " + options.getOutputPath());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        String testOutputFileIntegers = options.getOutputPath() + options.getOutputPrefix() + "integers.txt";
+        Path papap = createDir(options.getOutputPath());
+        System.out.println(papap.toAbsolutePath() + " " + papap);
+        String testOutputFileIntegers = papap.toString();
+        testOutputFileIntegers = String.valueOf(papap.resolve("integers.txt"));
+        System.out.println("testOutputFileIntegers: " + testOutputFileIntegers);
         // Append mode works well
         FileWriterService.writeToFile(testOutputFileIntegers, splitter.getIntegers(), options.isAddingMode());
         if(options.isShortStatistics()){
