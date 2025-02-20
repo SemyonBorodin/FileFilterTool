@@ -33,7 +33,9 @@ public class App
             }
         }
         String[] uniqueInputs = uniqueInputFilesNames.toArray(new String[0]);
-
+        if (options.isUniqMode()){
+            inputFilesNames = uniqueInputs;
+        }
         String outputPath = options.getOutputPath();
         List<String> data = readFile(inputFilesNames);
         if(data.size() == 0){
