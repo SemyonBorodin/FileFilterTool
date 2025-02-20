@@ -47,7 +47,7 @@ To build and run the FileFilterTool, you need the following:
 
 1. Java Development Kit (JDK):
 
-- Version: 17.0.14 or higher.
+- Version of Java: 17.0.14 or higher.
 
 - Download: Azul-23 Azul Zulu 23.0.2 or OpenJDK.
 
@@ -59,11 +59,20 @@ Version 3.8.7 or higher required
 3. Dependencies  
 After installing Java and Maven go to project dir and run  
    `mvn clean install` it will install:
-- commons-cli:commons-cli:1.9.0
-- exec-maven-plugin 3.1.0
-- junit-jupiter-api:5.11.4
-- junit-jupiter-engine:5.11.4
-- junit
+- commons-cli:commons-cli 1.9.0  
+  <https://mvnrepository.com/artifact/commons-cli/commons-cli/1.9.0>
+- exec-maven-plugin 3.1.0  
+  <https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin/3.1.0>
+- junit-jupiter-api 5.11.4  
+  <https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.11.4>
+- junit-jupiter-engine 5.11.4  
+  <https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.11.4>
+- junit 4.13.2
+  <https://mvnrepository.com/artifact/junit/junit/4.13.2>
+- maven-shade-plugin 3.3.0  
+  <https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin/3.3.0>
+- maven-jar-plugin 3.2.2  
+  <https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin/3.2.2>
   
 4. System: Linux or WSL
 
