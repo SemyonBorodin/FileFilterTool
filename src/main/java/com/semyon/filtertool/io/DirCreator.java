@@ -22,12 +22,12 @@ public class DirCreator {
                 path = Paths.get(System.getProperty("user.dir")).resolve(path).toAbsolutePath();
                 if (!Files.exists(path)) {
                     Files.createDirectories(path);
-                    System.out.println("Output dir " + path + " is successfully created.");
+                    // System.out.println("Output dir " + path + " is successfully created.");
                     return path;
                 }
                 else {
                     Files.createDirectories(path);
-                    System.out.println("Output dir is " + path);
+                    // System.out.println("Output dir is " + path);
                     return path;
                 }
             }
