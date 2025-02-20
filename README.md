@@ -38,18 +38,19 @@ Statistics will be printed to the console.
    `mvn clean package`  
 Is is aslo create a JAR file in the target dir: FileFilterTool-1.0-SNAPSHOT.jar
  
-3. Create input files with data; for exaple in1.txt in2.txt
+3. Create input files with data; for exaple in1.txt in2.txt  
 
-4.Run the utility via JAR or Maven as in the previous paragraph  
+4. Run the utility via JAR or Maven as in the previous paragraph  
    `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-f -o someFolder/ -a in1.txt in2.txt"`
 ## Requirements
 To build and run the FileFilterTool, you need the following:
 
 1. Java Development Kit (JDK):
 
-- Version of Java: 17.0.14 or higher.
+- JDK Required version: **17.0.14** or higher.
 
-- Download: Azul-23 Azul Zulu 23.0.2 or OpenJDK.
+- Download: [OpenJDK 17](<https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html>) or [Azul Zulu 17](<https://www.azul.com/downloads/?package=jdk#zulu>)
+- Recomended: OpenJDK **17.0.14** (Ubuntu build)  
 
 2. Apache Maven:  
 
