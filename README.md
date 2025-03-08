@@ -41,7 +41,7 @@ Is is aslo create a JAR file in the target dir: FileFilterTool-1.0-SNAPSHOT.jar
 3. Create input files with data; for exaple in1.txt in2.txt  
 
 4. Run the utility via JAR or Maven as in the previous paragraph  
-   `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-f -o someFolder/ -a in1.txt in2.txt"`
+   `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-f -o someFolder/ -a in1.txt in2.txt`
 ## Requirements
 To build and run the FileFilterTool, you need the following:
 
@@ -99,7 +99,7 @@ consectetur adipiscing
 Long
 1234567890123456789
 ```
-- `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-s -u -p important- in1.txt in1.txt in2.txt"`  
+- `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-s -u -p important- in1.txt in1.txt in2.txt`  
   short statistics, uniq mode, default output dir, prefix **important-**.
 - important-integers.txt  
   ```
@@ -176,7 +176,7 @@ Long
 3. Создайте входные файлы с данными; например, in1.txt и in2.txt.  
 
 4. Запустите утилиту через JAR или Maven, как в предыдущем пункте.  
-   `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-f -o someFolder/ -a in1.txt in2.txt"`
+   `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-f -o someFolder/ -a in1.txt in2.txt`
 
 ## Требования
 Для сборки и запуска **FileFilterTool** необходимо следующее:
@@ -235,7 +235,7 @@ consectetur adipiscing
 Long
 1234567890123456789
 ```
-- `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-s -u -p important- in1.txt in1.txt in2.txt"`  
+- `mvn exec:java -Dexec.mainClass="App" -Dexec.args="-s -u -p important- in1.txt in1.txt in2.txt`  
   Краткая статистика, считываем только уникальные имена файлов, директория по умолчанию, префикс выходных файлов **important-**.  
 - important-integers.txt  
   ```
